@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="../static/output.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div id="main_body" class="">
+      <div
+        id="Header"
+        class="flex justify-center items-center m-2 p-3 bg-green-400 rounded-4xl"
+      >
+        <div class="text-4xl text-white font-semibold font-mono">
+          Celebrity Image Classifier & Similarity Detector
+        </div>
+      </div>
+      <div id="showcase">
+        <div class="font-mono text-2xl mx-58 p-2 font-bold">Celebrities:</div>
+        <div id="men" class="flex justify-center gap-12 m-2 p-2">
+          <div id="Ajay_Devgn" class="flex flex-col items-center">
+            <img
+              src="../static/images/Ajay.jpg"
+              class="rounded-full w-28 h-28 object-cover object-center"
+            />
+            <div class="text-center mt-2 font-semibold font-mono text-xl">
+              Ajay Devgn
+            </div>
+          </div>
+          <div id="Amitabh_Bachchan" class="flex flex-col items-center">
+            <img
+              src="../static/images/Amitabh.jpg"
+              class="rounded-full w-28 h-28 object-cover object-center"
+            />
+            <div class="text-center mt-2 font-semibold font-mono text-xl">
+              Amitabh
+            </div>
+            <div class="text-center mt-2 font-semibold font-mono text-xl">
+              Bachchan
+            </div>
+          </div>
+          <div id="Anil_Kapoor" class="flex flex-col items-center">
+            <img
+              src="../static/images/Anil.jpg"
+              class="rounded-full w-28 h-28 object-cover object-center"
+            />
+            <div class="text-center mt-2 font-semibold font-mono text-xl">
+              Anil Kapoor
+            </div>
+          </div>
+          <div id="Salman_Khan" class="flex flex-col items-center">
+            <img
+              src="../static/images/Salman.jpg"
+              class="rounded-full w-28 h-28 object-cover object-center"
+            />
+            <div class="text-center mt-2 font-semibold font-mono text-xl">
+              Salman Khan
+            </div>
+          </div>
+          <div id="Shah_Rukh_Khan" class="flex flex-col items-center">
+            <img
+              src="../static/images/Shah_Rukh.jpg"
+              class="rounded-full w-28 h-28 object-cover object-center"
+            />
+            <div class="text-center mt-2 font-semibold font-mono text-xl">
+              Shah Rukh Khan
+            </div>
+          </div>
+        </div>
+
+        <div id="women" class="flex justify-center gap-12 m-2 p-2">
+          <div id="Juhi_Chawla" class="flex flex-col items-center">
+            <img
+              src="../static/images/Juhi.jpg"
+              class="rounded-full w-28 h-28 object-cover object-center"
+            />
+            <div class="text-center mt-2 font-semibold font-mono text-xl">
+              Juhi Chawla
+            </div>
+          </div>
+          <div id="Kajol" class="flex flex-col items-center">
+            <img
+              src="../static/images/Kajol.jpg"
+              class="rounded-full w-28 h-28 object-cover object-center"
+            />
+            <div class="text-center mt-2 font-semibold font-mono text-xl">
+              Kajol
+            </div>
+          </div>
+          <div id="Madhuri_Dixit" class="flex flex-col items-center">
+            <img
+              src="../static/images/Madhuri.jpg"
+              class="rounded-full w-28 h-28 object-cover object-center"
+            />
+            <div class="text-center mt-2 font-semibold font-mono text-xl">
+              Madhuri Dixit
+            </div>
+          </div>
+          <div id="Shilpa_Shetty_Kundra" class="flex flex-col items-center">
+            <img
+              src="../static/images/Shilpa.jpg"
+              class="rounded-full w-28 h-28 object-cover object-center"
+            />
+            <div class="text-center mt-2 font-semibold font-mono text-xl">
+              Shilpa Shetty
+            </div>
+            <div class="text-center mt-2 font-semibold font-mono text-xl">
+              Kundra
+            </div>
+          </div>
+          <div id="Sridevi" class="flex flex-col items-center">
+            <img
+              src="../static/images/Sridevi.jpg"
+              class="rounded-full w-28 h-28 object-cover object-center"
+            />
+            <div class="text-center mt-2 font-semibold font-mono text-xl">
+              Sridevi
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="upload" class="flex justify-center items-center my-10">
+        <div class="flex flex-col items-center space-y-4">
+          <form id="uploadForm" class="w-full max-w-lg">
+            <label
+              for="fileInput"
+              class="flex flex-col items-center justify-center border-2 border-dashed border-gray-400 rounded-lg h-48 w-96 cursor-pointer bg-white hover:bg-gray-50 transition"
+            >
+              <svg
+                id="uploadIcon"
+                class="w-10 h-10 text-gray-500 mb-2"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M7 16V4m0 0l-4 4m4-4l4 4M17 8v12m0 0l-4-4m4 4l4-4"
+                />
+              </svg>
+              <p id="uploadText" class="text-gray-500">Drop Your Image Here</p>
+              <p id="uploadSubText" class="text-gray-400 text-sm">
+                Click To Select
+              </p>
+              <input
+                id="fileInput"
+                type="file"
+                name="file"
+                class="hidden"
+                accept="image/*"
+              />
+            </label>
+          </form>
+          <div class="flex justify-between space-x-3">
+            <button
+              class="classify-btn px-4 py-2 bg-green-400 text-white hover:bg-green-500 transition font-semibold font-mono rounded-full"
+            >
+              Classify Image
+            </button>
+            <button
+              class="similarity-btn px-4 py-2 bg-green-400 text-white hover:bg-green-500 transition font-semibold font-mono rounded-full"
+            >
+              Show Similarity
+            </button>
+            <div id="loading" class="hidden text-green-500 font-mono mt-4">
+              ⏳ Uploading and Processing...
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="result_container" class="hidden"></div>
+    </div>
+    <script src="../static/app.js"></script>
+  </body>
+</html>
