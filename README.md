@@ -90,8 +90,8 @@ This project includes a **Dockerfile** for easy containerization.
 
 Or pull the **prebuilt image** from Docker Hub:
 ```bash
-docker pull iiamharshit237/imageclassification-similarity:latest
-docker run -p 5000:5000 iiamharshit237/imageclassification-similarity
+docker pull iamharshit237/imageclassification-similarity:latest
+docker run -p 5000:5000 iamharshit237/imageclassification-similarity
 ```
 
 The app will be available at **http://localhost:5000**.
