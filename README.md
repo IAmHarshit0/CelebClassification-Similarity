@@ -1,10 +1,10 @@
 # 🎬 Celebrity Image Classification & Similarity
 
-This project is a **Flask-based web application** that can:
+A **Flask-based web application** that:
 
-1. **Classify** an uploaded image to identify whether the celebrity is male or female.  
-2. **Compute similarity** of the uploaded image against a dataset of Indian celebrities and display the **probability scores** for each celebrity.  
-3. Show the **best matching celebrity** and their confidence percentage.  
+1. **Classifies** an uploaded celebrity image as **male or female**  
+2. **Computes similarity** of the uploaded image against a dataset of Indian celebrities  
+3. Displays **probability scores** and the **best matching celebrity** with confidence percentage  
 
 ---
 
@@ -12,37 +12,36 @@ This project is a **Flask-based web application** that can:
 
 ```
 project/
-├── dataset/                 # Original celebrity images (ignored in git)
+├── dataset/                     # Original celebrity images (ignored in git)
 ├── server/
-│   ├── server.py            # Flask backend
-│   ├── util.py              # Helper functions (face encoding, model loading)
-│   ├── artifacts/           # Model and dictionary files (.pkl, .json)
-│   ├── images/              # Small showcase images for UI
-│   ├── static/              # JS, CSS, and other static files
-│   └── templates/           # HTML templates (app.html)
-├── Celebrity_Classifier.ipynb  # Notebook used for training/testing
-├── Crawler.py               # Script to collect dataset images
-├── haar_eye.xml             # Haarcascade for eyes
-├── haar_face.xml            # Haarcascade for face
-├── requirements.txt         # Python dependencies
-├── Procfile                 # For Render deployment
-├── package.json             # For Node-related UI (Tailwind)
-└── .gitignore
+│   ├── server.py                # Flask backend
+│   ├── util.py                  # Helper functions (face encoding, model loading)
+│   ├── artifacts/               # Model and dictionary files (.pkl, .json)
+│   ├── static/                  # JS, CSS, and other static files
+│   ├── templates/               # HTML templates (app.html)
+│   ├── Dockerfile               # Dockerfile for containerization
+│   └── requirements.txt         # Python dependencies
+├── Celebrity_Classifier.ipynb   # Notebook used for training/testing
+├── Crawler.py                   # Script to collect dataset images
+├── haar_eye.xml                 # Haarcascade for eyes
+├── haar_face.xml                # Haarcascade for face
+├── Procfile                     # For optional cloud hosting
+└── README.md
 ```
 
 ---
 
 ## ⚡ Features
 
-- **Image Upload & Preview** – Select an image.  
-- **Celebrity Classification** – Determines if the celebrity is a man or woman.  
-- **Similarity Scoring** – Compares uploaded image with dataset and gives probability scores.  
-- **Best Match Highlight** – Displays the top-matching celebrity and category.  
-- **Tailwind CSS UI** – Clean, responsive interface with automatic result display.  
+- **Image Upload & Preview** – Upload an image and preview it in the browser  
+- **Celebrity Classification** – Classifies uploaded celebrity image as male or female  
+- **Similarity Scoring** – Compares uploaded image against known celebrities and returns probability scores  
+- **Best Match Highlight** – Displays the top-matching celebrity with confidence percentage  
+- **Tailwind CSS UI** – Clean, responsive interface with automatic result display  
 
 ---
 
-## 🚀 How to Run Locally
+## 🚀 Run Locally
 
 1. **Clone the repository**
    ```bash
@@ -58,12 +57,12 @@ project/
 
 3. **Install dependencies**
    ```bash
+   cd server
    pip install -r requirements.txt
    ```
 
 4. **Run the Flask app**
    ```bash
-   cd server
    python server.py
    ```
 
@@ -74,8 +73,31 @@ project/
 
 ---
 
+## 🐳 Run with Docker (Optional)
+
+This project includes a **Dockerfile** for easy containerization.
+
+1. **Build the Docker Image**
+   ```bash
+   cd server
+   docker build -t celebrity-classification .
+   ```
+
+2. **Run the Container**
+   ```bash
+   docker run -p 5000:5000 celebrity-classification
+   ```
+
+Or pull the **prebuilt image** from Docker Hub:
+```bash
+docker pull iiamharshit237/imageclassification-similarity:latest
+docker run -p 5000:5000 iiamharshit237/imageclassification-similarity
+```
+
+The app will be available at **http://localhost:5000**.
+
+---
+
 ## 📜 License
 
 This project is for **educational purposes**. You can modify and use it as needed.
-
----
